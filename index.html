@@ -212,15 +212,207 @@
         <h1>Dự án BGATE</h1>
       </section>
 
+      <section>
+        <h3>Quảng cáo trực tuyến</h3>
+
+        <p>
+          <img src="/img/quang-cao.jpg" alt="" />
+        </p>
+
+        <aside class="notes">
+          Trong quá trình tìm hiểu Node.js, PTN thí nghiệm có nhận được 1 đơn đặt hàng từ phía
+          Cty BDA (là 1 công ty về truyền thông)
+
+          Muốn xây dựng 1 hệ thống quảng cáo
+        </aside>
+      </section>
+
+      <section data-transition="fade">
+        <h3>Quảng cáo trực tuyến</h3>
+
+        <ul>
+          <li>Quảng cáo thuần</li>
+          <li class="fragment">Quảng cáo tìm kiếm</li>
+        </ul>
+      </section>
+
+      <section data-transition="fade">
+        <img src="/img/quang-cao-tim-kiem.png" alt="" />
+      </section>
+
+      <section data-transition="fade">
+        <h3>Quảng cáo trực tuyến</h3>
+
+        <ul>
+          <li>Quảng cáo thuần</li>
+          <li>Quảng cáo tìm kiếm</li>
+          <li>Quảng cáo hiển thị</li>
+        </ul>
+      </section>
+
+      <section data-transition="fade">
+        <img src="/img/quang-cao-hien-thi.png" alt="" />
+      </section>
+
+      <section data-transition="fade">
+        <h3>Quảng cáo trực tuyến</h3>
+
+        <ul>
+          <li>Quảng cáo thuần</li>
+          <li>Quảng cáo tìm kiếm</li>
+          <li><strong>Quảng cáo hiển thị</strong></li>
+          <li>.....</li>
+        </ul>
+
+        <aside class="notes">
+          Và còn nhiều loại quảng cáo khác.
+          Dự án BGate là loại quảng cáo mạng hiển thị.
+          (bấm next)
+          ==> Mục tiêu: xây dựng hệ thống kế nối giữa người mua và bán quảng cáo.
+          Và hệ thống đấu giá quảng cáo thông qua phương thức RTB
+        </aside>
+      </section>
+
+      <section>
+        <h1>BGATE</h1>
+
+        <aside class="notes">
+          ==> Mục tiêu: xây dựng hệ thống kế nối giữa người mua và bán quảng cáo.
+          Hệ thống này được gọi là Ad Exchange (next)
+
+          Và hệ thống đấu giá quảng cáo thông qua phương thức RTB
+        </aside>
+      </section>
+
+
+      <section>
+        <h2>Hệ thống Ad Exchange</h2>
+
+        <aside class="notes">
+          ANTS Ad Exchange là một nền tảng quảng cáo thời gian thực cung cấp
+          cho các nhà quảng cáo một công cụ đơn giản, dễ sử dụng và đủ mạnh mẽ
+           để đem lại thành công cho chiến dịch.
+
+        </aside>
+      </section>
+
+      <section>
+        <h3>BGATE</h3>
+
+        <p>1. BGate Dashboard</p>
+          <p>2. BGate RTB</p>
+        </ol>
+
+        <aside class="notes">
+        Về cơ bản, BGate ở giai đoạn 1 chỉ yêu cầu xây dựng thành công 1 kênh
+        giúp người mua/bán QC kết nối lại được với nhau.
+        <br />
+        ....
+        2 phần chính của BGate là Dashboard và RTB.
+        <br />
+        <ul>
+          <li>Dashboard: làm băng PHP, có tham khảo 1 số dự án nguồn mở</li>
+          <li>RTB: làm bằng Node.js + MongoDB (Redis). </li>
+        </ul>
+
+
+
+        2 module này được đồng bộ dữ liệu với nhau.
+        </aside>
+      </section>
+
+      <section>
+        <h2>Dashboard</h2>
+        <p>
+
+          <img src="/img/bgate-dashboard.png" alt="" />
+        </p>
+
+        <aside class="notes">
+          BGate dashboard đơn giản cho Publisher và Advertiser đăng ký.
+          Publicsher là người có trang web ...
+          Advertiser mong muốn đc đặt quảng cáo ...
+        </aside>
+      </section>
+
+      <section>
+        <h2>BGate RTB</h2>
+
+        <p>
+          <img src="/img/rtb.jpg" alt="" />
+        </p>
+
+
+        <aside class="notes">
+          Dữ liệu đc kết nối đến CSDL của Dashboard -> lưu trên bộ nhớ server.
+          <br />
+          Khó khăn: mỗi bid phải đc xử lý trong 100ms. (next)
+          Do yêu cầu kết nối đến các Ad Exchange khác.
+        </aside>
+      </section>
+
+      <section>
+            <h1>&lt; 100ms</h1>
+
+            <aside class="notes">
+              Tối ưu hóa code <br />
+              Xử lý hết trên RAM <br />
+              Viết lại các thư viện trên C++ <br />
+
+              Và việc đấu giá diễn ra ngay tức khắc.
+            </aside>
+      </section>
+
+      <section>
+        <img src="/img/300x250-bgate.png" alt="" />
+        <aside class="notes">
+          Và kết quả đấu giá thắng sẽ được render hiển thị.
+          <br />
+          Khi người dùng nhìn thấy banner sẽ đc tính 1 impression.
+          <br />
+          Click tính tiền
+          <br />
+          Mốt số thuật toán cơ bản chống gian lận.
+        </aside>
+      </section>
+
+      <section>
+        <h3>Kết luận</h3>
+        <p>
+          <ul>
+            <li>Kỹ năng nghiên cứu, tìm hiểu</li>
+            <li>Làm việc nhóm + độc lập</li>
+            <li>Kỹ năng trình bày vấn đề</li>
+          </ul>
+
+
+        </p>
+
+        <aside class="notes">
+          Và cuối cùng em xin kết luận trong quá trình thực tập.
+
+          <br />
+          Làm nhóm (Trello  + Excel)
+          <br />
+          Trình bày vấn đề: Team  + Khách hang
+          <br />
+
+        </aside>
+      </section>
 
       <section class="left">
         <h1>THANK YOU</h1>
         <p>
           <img src="img/tho-bay-mau-end.png" />
         </p>
-        <p>
-
-        </p>
+        <aside class="notes">
+            Một lần nữa em xin cám ơn các anh chị, cám ơn thầy Hùng
+            đã tận tình giúp đỡ các bạn.
+            <br />
+            Không chỉ trong dự án này, mà còn nhiều việc khác.
+            <br />
+            Bản thân mong muốn start up .... 
+        </aside>
       </section>
 
     </div>
